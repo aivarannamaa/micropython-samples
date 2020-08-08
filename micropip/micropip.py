@@ -169,7 +169,7 @@ def url_open(url):
     return s
 
 # Now searches official library first before looking on PyPi for user packages
-def get_pkg_metadata(name):
+def get_pkg_metadata(pkg_spec):
     if "==" in pkg_spec:
         name, ver = pkg_spec.split("==", maxsplit=1)
         f = url_open("https://pypi.org/pypi/%s/%s/json" % (name, ver))
